@@ -1,0 +1,11 @@
+function importAll(r) {
+  return r.keys().map((key) => {
+    const regExp = /[A-Z]\D*[^.png]/gm;
+    return {
+      appName: key.match(regExp)[0],
+      imgURI: r(key).default,
+    };
+  });
+}
+
+export { importAll };

@@ -1,0 +1,63 @@
+.show-on-device {
+  margin-top: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.show-on-device__view-apps {
+  display: grid;
+  grid-template-rows: repeat(4, auto);
+  align-content: first baseline;
+  background-image: url('../../public/img/background.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  align-self: center;
+  justify-self: center;
+  width: 1024px;
+  height: 768px;
+  z-index: 1;
+}
+
+.show-on-device__choose-device > img {
+  width: auto;
+  height: auto;
+  z-index: -1;
+  position: relative;
+  left: 7px;
+}
+
+.view-control-panel {
+  margin: 15px;
+}
+
+.view-control-panel > img {
+  width: 25%;
+  align-self: center;
+  justify-self: center;
+}
+
+.view-control-panel > img.rotated {
+  transform: rotate(90deg);
+}
+.blackbox {
+  display: grid;
+  grid-template-rows: repeat(4, auto);
+  align-content: first baseline;
+  background-image: url('../../public/img/background.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  align-self: center;
+  justify-self: center;
+  width: 1024px;
+  height: 768px;
+  z-index: 1;
+}
+
+.blackbox2 {
+  width: inherit;
+  height: 10px;
+  background-color: black;
+}

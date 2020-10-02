@@ -1,0 +1,15 @@
+.app-icon {
+  font-weight: inherit;
+}
+
+.app-icon__img {
+  max-height: 115px;
+  align-self: inherit;
+  justify-self: inherit;
+}
+
+.app-icon__title {
+  text-align: center;
+  color: #ffffff;
+  font-weight: inherit;
+}

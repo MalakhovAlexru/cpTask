@@ -1,0 +1,25 @@
+.system-info-show-area {
+  display: grid;
+  grid-template-rows: repeat(1, auto);
+  grid-template-columns: repeat(3, auto);
+  color: white;
+  align-items: center;
+}
+
+.system-info-show-area__call-operator-info-area {
+  justify-self: start;
+  font-size: 100%;
+  padding-left: 1%;
+}
+
+.system-info-show-area__time-info-area {
+  justify-self: center;
+  font-weight: bold;
+  font-size: 100%;
+}
+
+.system-info-show-area__battery-info-area {
+  justify-self: end;
+  padding-right: 1%;
+  font-size: 100%;
+}
