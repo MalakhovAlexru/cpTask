@@ -13,3 +13,17 @@
   color: #ffffff;
   font-weight: inherit;
 }
+
+.app-icon__img--stubsImageBCG {
+  /* min-width: inherit; */
+  height: 115px;
+  width: 115px;
+  /* align-self: inherit;
+  justify-self: inherit; */
+  /* display: none; */
+  background-color: #ffffff00;
+}
+.app-icon__img--stubsTitleBCG {
+  height: 18.75px;
+  width: 115px;
+}

@@ -8,7 +8,25 @@ import './MainBody.css';
 
 export default function MainBody({ appIconList, amountAppsOnPage }) {
   const classString = 'main-bar-app-show-area grid-container';
-  const appsForMainBlock = appIconList.splice(0, amountAppsOnPage);
+  const appsForMainBlock = appIconList.slice(0, amountAppsOnPage);
+
+  // Если элементов меньше, чем свободных мест - используем заглушки
+  if (appsForMainBlock.length < amountAppsOnPage) {
+    const lastIconPostion = appsForMainBlock.slice(-1)[0].position;
+    const diffBTNArrays = amountAppsOnPage - appsForMainBlock.length;
+
+    for (let i = 1; i <= diffBTNArrays; i++) {
+      appsForMainBlock.push({
+        appName: '',
+        imgURI: '',
+        position: lastIconPostion + i,
+        inButtomMenu: false,
+        falseElement: true,
+      });
+    }
+    console.log(appsForMainBlock);
+  }
+  console.log(appsForMainBlock);
 
   return (
     <div className={classString}>

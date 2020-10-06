@@ -1,8 +1,12 @@
 * {
   margin: 0;
   padding: 0;
+  transition: all 0.7s;
 }
 
 body {
   background-color: rgba(128, 128, 128, 0.76);
+}
+
+@media only screen and (max-width: 1300px) {
 }

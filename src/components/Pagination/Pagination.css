@@ -9,17 +9,17 @@
   align-content: center;
   margin: 1% 1%;
 }
-.pagination-app-main-menu a {
+.pagination-app-main-menu li {
   display: inline-block;
   position: relative;
   width: 10px;
   height: 10px;
   border-radius: 50%;
 }
-.pagination-app-main-menu a.active {
+.pagination-app-main-menu li.active {
   border: 1px solid #3498db;
 }
-.pagination-app-main-menu a:before {
+.pagination-app-main-menu li:before {
   content: '';
   position: absolute;
   top: 3px;
