@@ -1,29 +1,16 @@
-.button-bar-app-show-area {
-  width: -moz-available;
-  width: -webkit-fill-available;
-  font-weight: bold;
+.buttom-menu-background-blur {
+  filter: blur(4px);
   position: absolute;
-  bottom: 0;
+  background-color: #f0f8ff52;
+  width: 100%;
+  height: 100%;
+  top: 1px;
+  z-index: -1;
 }
 
-.button-bar-app-show-area::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: -1;
-  background-color: rgba(255, 255, 255, 0.6);
-  filter: blur(5px);
+.buttom-menu-foreground-blur {
+  backdrop-filter: blur(10px);
 }
-
-/* .button-bar-app-show-area__bacground {
-  z-index: -1;
-  filter: blur(5px);
-  background-color: grey;
-} */
-
 /* .button-bar-app-show-area__grid-container {
   z-index: 3;
 } */

@@ -6,12 +6,15 @@ import './ButtonMenuBar.css';
 
 export default function ButtonMenuBar({ buttonBarApps }) {
   return (
-    <div className="grid-container button-bar-app-show-area">
-      {buttonBarApps.length > 0
-        ? buttonBarApps.map((el, idx) => {
-            return <AppIcon appData={el} key={idx} />;
-          })
-        : 'No apps for show'}
-    </div>
+    <React.Fragment>
+      <div className="grid-container buttom-menu-foreground-blur">
+        {buttonBarApps.length > 0
+          ? buttonBarApps.map((el, idx) => {
+              return <AppIcon appData={el} key={idx} />;
+            })
+          : 'No apps for show'}
+      </div>
+      <div className="buttom-menu-background-blur"></div>
+    </React.Fragment>
   );
 }

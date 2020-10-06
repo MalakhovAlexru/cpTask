@@ -1,6 +1,13 @@
 $width-hor-ipad: 1024px;
 $height-hor-ipad: 768px;
 
+$width-ver-ipad: 768px;
+$height-ver-ipad: 1024px;
+
+$width-ver-iphone: 768px;
+$height-ver-iphone: 568px;
+
+// @media only screen and ()
 .show-on-device {
   margin-top: 1%;
   display: flex;
@@ -10,25 +17,21 @@ $height-hor-ipad: 768px;
 
 .show-on-device__view-apps {
   display: grid;
-  grid-template-rows: repeat(4, auto);
+  grid-template-rows: 25px 2fr 25px auto;
   align-content: first baseline;
   background-image: url('../../public/img/background.jpg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  position: absolute;
+  //   position: absolute;
   align-self: center;
   justify-self: center;
-  width: $width-hor-ipad;
-  height: $height-hor-ipad;
-  z-index: 1;
+  width: $width-ver-iphone;
+  height: $height-ver-iphone;
+  z-index: -1;
 }
 
-.show-on-device__choose-device > img {
-  width: auto;
-  height: auto;
-  z-index: -1;
-  position: relative;
-  left: 7px;
+div#wrapper-buttom-menu {
+  backdrop-filter: blur(10px);
 }
 
 .view-control-panel {
@@ -44,17 +47,10 @@ $height-hor-ipad: 768px;
 .view-control-panel > img.rotated {
   transform: rotate(90deg);
 }
-.blackbox {
+
+.grid-container {
   display: grid;
-  grid-template-rows: repeat(4, auto);
-  align-content: first baseline;
-  background-image: url('../../public/img/background.jpg');
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  position: absolute;
-  align-self: center;
-  justify-self: center;
-  width: 1024px;
-  height: 768px;
-  z-index: 1;
+  grid-template-columns: repeat(5, auto);
+  padding: 10px;
+  justify-content: space-between;
 }

@@ -18,7 +18,7 @@ export default function App() {
   // 1. (size) Узнать размер экрана - значение по которой строится дальнейшая логика
   const [size, setSize] = useState([0, 0]);
   const [currentPage, setCurrentPage] = useState(1); // Pagination nav
-  const [maxAmountIconsPerPage, setMaxAmountIconsPerPage] = useState(20); // max icons per page
+  const [maxAmountIconsPerPage, setMaxAmountIconsPerPage] = useState(10); // max icons per page
   const [maxAmountIconsOnButtonBar, setMaxAmountIconsOnButtonBar] = useState(5); // Buttom menu
 
   const totalPages = Math.ceil(appIconList.length / maxAmountIconsPerPage);
@@ -61,22 +61,17 @@ export default function App() {
 
   return (
     <React.Fragment>
-      <div className="show-on-device">
-        <div className="show-on-device__view-apps">
-          <TopInfoBar />
-          <MainBody appIconList={mainBarIcons} amountAppsOnPage={maxAmountIconsPerPage} />
-          <Pagination totalPages={totalPages} currentPage={currentPage} paginate={paginate} />
-          <ButtonMenuBar buttonBarApps={buttomMenuBarIcons} />
+      <div id="wrapper">
+        <div className="show-on-device">
+          <div className="show-on-device__view-apps">
+            <TopInfoBar />
+            <MainBody appIconList={mainBarIcons} amountAppsOnPage={maxAmountIconsPerPage} />
+            <Pagination totalPages={totalPages} currentPage={currentPage} paginate={paginate} />
+            <div id="wrapper-buttom-menu">
+              <ButtonMenuBar buttonBarApps={buttomMenuBarIcons} className="buttom-menu-background-blur" />
+            </div>
+          </div>
         </div>
-        <div className="show-on-device__choose-device">
-          <img src="../public/img/ipad-mini-horizontal.png" />
-        </div>
-      </div>
-      <div className="view-control-panel grid-container">
-        <img src="../public/img/ipad-mini-horizontal.png" />
-        <img src="../public/img/ipad-mini-horizontal.png" className="rotated" />
-        <img src="../public/img/iphone5-horizontal.png" />
-        <img src="../public/img/iphone5-horizontal.png" className="rotated" />
       </div>
     </React.Fragment>
   );

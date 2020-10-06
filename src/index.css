@@ -8,5 +8,17 @@ body {
   background-color: rgba(128, 128, 128, 0.76);
 }
 
-@media only screen and (max-width: 1300px) {
+.header {
+  height: 25px;
+  width: 100%;
+}
+
+.footer {
+  height: 25px;
+  width: 100%;
+}
+div#wrapper {
+  margin: 1% 1%;
+  width: auto;
+  height: auto;
 }
