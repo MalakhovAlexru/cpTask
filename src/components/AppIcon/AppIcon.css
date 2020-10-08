@@ -1,29 +1,21 @@
 .app-icon {
-  font-weight: inherit;
+  display: flex;
+  width: inherit;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .app-icon__img {
-  max-height: 115px;
-  align-self: inherit;
-  justify-self: inherit;
+  width: 55%;
 }
 
 .app-icon__title {
-  text-align: center;
   color: #ffffff;
-  font-weight: inherit;
-}
-
-.app-icon__img--stubsImageBCG {
-  /* min-width: inherit; */
-  height: 115px;
-  width: 115px;
-  /* align-self: inherit;
-  justify-self: inherit; */
-  /* display: none; */
-  background-color: #ffffff00;
-}
-.app-icon__img--stubsTitleBCG {
-  height: 18.75px;
-  width: 115px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-shadow: 0px 0px 6px #000000;
+  text-overflow: ellipsis;
 }

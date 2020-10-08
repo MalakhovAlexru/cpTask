@@ -6,8 +6,8 @@ import './MainBody.css';
 
 // Список всех иконок пагинация
 
-export default function MainBody({ appIconList, amountAppsOnPage }) {
-  const classString = 'main-bar-app-show-area grid-container';
+export default function MainBody({ appIconList, amountAppsOnPage, customClass }) {
+  const classString = customClass;
   const appsForMainBlock = appIconList.slice(0, amountAppsOnPage);
 
   // Если элементов меньше, чем свободных мест - используем заглушки
@@ -24,9 +24,7 @@ export default function MainBody({ appIconList, amountAppsOnPage }) {
         falseElement: true,
       });
     }
-    console.log(appsForMainBlock);
   }
-  console.log(appsForMainBlock);
 
   return (
     <div className={classString}>

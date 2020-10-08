@@ -4,34 +4,125 @@ $height-hor-ipad: 768px;
 $width-ver-ipad: 768px;
 $height-ver-ipad: 1024px;
 
-$width-ver-iphone: 768px;
-$height-ver-iphone: 568px;
+$width-hor-iphone: 768px;
+$height-hor-iphone: 568px;
 
-// @media only screen and ()
+$width-ver-iphone: 568px;
+$height-ver-iphone: 320px;
+
+// .show-on-device__view-apps--wallpapers {
+
+// }
+
+// ipad horizontal
+@media only screen and (min-width: 1024px) {
+  .show-on-device__view-apps {
+    display: grid;
+    grid-template-rows: 0.2fr 3fr 0.2fr 1fr;
+    align-content: first baseline;
+    align-self: center;
+    justify-self: center;
+    width: $width-hor-ipad;
+    height: $height-hor-ipad;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    padding: 10px;
+    justify-content: space-between;
+  }
+}
+// ipad vertical
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .show-on-device__view-apps {
+    display: grid;
+    grid-template-rows: 0.2fr 3fr 0.2fr 1fr;
+
+    align-content: first baseline;
+    align-self: center;
+    justify-self: center;
+    width: $width-ver-ipad;
+    height: $height-ver-ipad;
+    // min-width: 1024px;
+    // min-height: 768px;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+
+    padding: 10px;
+    justify-content: space-between;
+  }
+}
+
+// iphone vertical
+
+@media only screen and (min-width: 568px) and (max-width: 767px) {
+  .show-on-device__view-apps {
+    display: flex;
+    // grid-template-rows: 0.2fr 3fr 0.2fr 1fr;
+    // align-content: first baseline;
+    flex-direction: column;
+    align-self: center;
+    justify-self: center;
+    width: $width-hor-iphone;
+    height: $height-hor-iphone;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 1em;
+    // padding: 10px;
+    // justify-content: space-between;
+  }
+}
+@media only screen and (min-width: 368px) and (max-width: 567px) {
+  .show-on-device__view-apps {
+    display: flex;
+    // grid-template-rows: 0.2fr 3fr 0.2fr 1fr;
+    // align-content: first baseline;
+    flex-direction: column;
+    align-self: center;
+    justify-self: center;
+    width: $width-ver-iphone;
+    height: $height-ver-iphone;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 1em;
+    // padding: 10px;
+    // justify-content: space-between;
+  }
+}
+
 .show-on-device {
   margin-top: 1%;
   display: flex;
   justify-content: center;
   align-items: baseline;
-}
-
-.show-on-device__view-apps {
-  display: grid;
-  grid-template-rows: 25px 2fr 25px auto;
-  align-content: first baseline;
+  max-width: inherit;
   background-image: url('../../public/img/background.jpg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  //   position: absolute;
-  align-self: center;
-  justify-self: center;
-  width: $width-ver-iphone;
-  height: $height-ver-iphone;
-  z-index: -1;
 }
 
 div#wrapper-buttom-menu {
-  backdrop-filter: blur(10px);
+  display: flex;
+  backdrop-filter: blur(26px);
+  justify-content: center;
+  align-items: center;
+}
+.flex-row-container {
+  display: flex;
+  flex-direction: row;
 }
 
 .view-control-panel {
@@ -46,11 +137,4 @@ div#wrapper-buttom-menu {
 
 .view-control-panel > img.rotated {
   transform: rotate(90deg);
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(5, auto);
-  padding: 10px;
-  justify-content: space-between;
 }

@@ -13,17 +13,16 @@ export default function AppIcon({ appData }) {
   return (
     <div className="app-icon">
       {!appData.falseElement ? (
-        <div>
+        <React.Fragment>
           <img className="app-icon__img" src={imgURI} alt={appName} />
           <div className="app-icon__title">{appName}</div>
-        </div>
+        </React.Fragment>
       ) : (
-        <div>
-          <div className="app-icon__img--stubsImageBCG" />
-          <div className="app-icon__img--stubsTitleBCG" />
-        </div>
+        <React.Fragment>
+          <div className="app-icon__img" />
+          <div className="app-icon__img" />
+        </React.Fragment>
       )}
-      {/* <div className="app-icon__title">{appName}</div> */}
     </div>
   );
 }

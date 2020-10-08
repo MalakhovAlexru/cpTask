@@ -8,17 +8,21 @@ body {
   background-color: rgba(128, 128, 128, 0.76);
 }
 
+div#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 96%;
+  height: 96%;
+  padding: 1% 1%;
+}
+
 .header {
-  height: 25px;
+  height: 1%;
   width: 100%;
 }
 
 .footer {
-  height: 25px;
+  height: 1%;
   width: 100%;
-}
-div#wrapper {
-  margin: 1% 1%;
-  width: auto;
-  height: auto;
 }

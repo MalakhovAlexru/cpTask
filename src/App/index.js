@@ -18,7 +18,7 @@ export default function App() {
   // 1. (size) Узнать размер экрана - значение по которой строится дальнейшая логика
   const [size, setSize] = useState([0, 0]);
   const [currentPage, setCurrentPage] = useState(1); // Pagination nav
-  const [maxAmountIconsPerPage, setMaxAmountIconsPerPage] = useState(10); // max icons per page
+  const [maxAmountIconsPerPage, setMaxAmountIconsPerPage] = useState(20); // max icons per page
   const [maxAmountIconsOnButtonBar, setMaxAmountIconsOnButtonBar] = useState(5); // Buttom menu
 
   const totalPages = Math.ceil(appIconList.length / maxAmountIconsPerPage);
@@ -32,6 +32,7 @@ export default function App() {
   const nonButtomBarIcons = [];
 
   appIconList.map((el) => {
+    // проверяем, что в объекте есть свойство "inButtomMenu"
     if (el.inButtomMenu) {
       buttomMenuBarIcons.push(el);
       // 4 test easy purpose, in future - planing to analize the array of icons
@@ -59,18 +60,29 @@ export default function App() {
     return () => window.removeEventListener('resize', updateSize);
   }, []);
 
+  // Проверка, если размер экрана меньше указанной ширины - показывать меньше иконок на дисплее
+  // if (size[0] < Number(1024)) {
+  //   setMaxAmountIconsPerPage()
+  // }
+
   return (
     <React.Fragment>
-      <div id="wrapper">
-        <div className="show-on-device">
-          <div className="show-on-device__view-apps">
-            <TopInfoBar />
-            <MainBody appIconList={mainBarIcons} amountAppsOnPage={maxAmountIconsPerPage} />
-            <Pagination totalPages={totalPages} currentPage={currentPage} paginate={paginate} />
-            <div id="wrapper-buttom-menu">
-              <ButtonMenuBar buttonBarApps={buttomMenuBarIcons} className="buttom-menu-background-blur" />
-            </div>
-          </div>
+      <div className="show-on-device">
+        <div className="show-on-device__view-apps">
+          <TopInfoBar />
+          <MainBody
+            appIconList={mainBarIcons}
+            amountAppsOnPage={maxAmountIconsPerPage}
+            customClass="main-bar-app-show-area grid-container"
+          />
+          <Pagination totalPages={totalPages} currentPage={currentPage} paginate={paginate} />
+          {/* <div id="wrapper-buttom-menu"> */}
+          <MainBody
+            appIconList={buttomMenuBarIcons}
+            amountAppsOnPage={5}
+            customClass="main-bar-app-show-area flex-row-container"
+          />
+          {/* </div> */}
         </div>
       </div>
     </React.Fragment>
