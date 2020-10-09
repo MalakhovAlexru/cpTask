@@ -61,9 +61,11 @@ export default function App() {
   }, []);
 
   // Проверка, если размер экрана меньше указанной ширины - показывать меньше иконок на дисплее
-  // if (size[0] < Number(1024)) {
-  //   setMaxAmountIconsPerPage()
-  // }
+  useEffect(() => {
+    if (size[0] < Number(767)) {
+      setMaxAmountIconsPerPage(12);
+    }
+  }, []);
 
   return (
     <React.Fragment>
